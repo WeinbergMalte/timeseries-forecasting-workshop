@@ -1,0 +1,69 @@
+[tool.poetry]
+authors = ["Malte Weinberg malte.weinberg@kuehne-nagel.com"]
+description = "Time series forecasting workshop"
+name = "timeseries"
+packages = [{include = "timeseries", from = "src"}]
+version = "0.0.1"
+
+[tool.dsa.docker.build]
+
+[tool.poetry.urls]
+"Datascience Team" = "https://github.com/WeinbergMalte/timeseries-forecasting-workshop"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+lightgbm = "^3.3.3"
+loguru = "^0.6.0"
+#optuna = "3.0.4" # At version 3.1, Optuna causes mypy to stall without an exception, hence, the version is fixed here.
+pandas = "^2.0"
+pydantic = "^1.9.0"
+scikit-learn = "^1.0"
+seaborn = "^0.12.2"
+sktime = "^0.13.0"
+typer = "^0.6.1"
+
+[tool.poetry.scripts]
+airpricingetl = "timeseries.cli:app"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.10.2"
+pytest = "^7.0.1"
+pytest-cov = "^3.0.0"
+black = ">=22.12.0"
+mypy = "^0.991"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["setuptools", "poetry-core>=1.0.0"]
+
+[tool.pytest]
+addopts = "-ra --black"
+junit_logging = "all"
+log_file_level = "debug"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+  "ignore:Call to deprecated create function FieldDescriptor",
+  "ignore:Call to deprecated create function Descriptor",
+  "ignore:Call to deprecated create function EnumDescriptor",
+  "ignore:Call to deprecated create function EnumValueDescriptor",
+  "ignore:Call to deprecated create function FileDescriptor",
+  "ignore:Call to deprecated create function OneofDescriptor",
+  "ignore:.*:DeprecationWarning",
+  "ignore:.*:FutureWarning",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+
+[tool.isort]
+include_trailing_comma = 'True'
+known_pytest = ['pytest']
+line_length = 88
+multi_line_output = 3
+profile = "black"
+sections = ['FUTURE', 'PYTEST', 'STDLIB', 'THIRDPARTY', 'FIRSTPARTY', 'LOCALFOLDER']
+
+[tool.mypy]
+plugins = ["numpy.typing.mypy_plugin"]
