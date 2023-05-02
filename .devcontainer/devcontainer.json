@@ -11,6 +11,9 @@
             "openFiles": []
         },
         "vscode": {
+        "settings": {
+            "workbench.colorTheme": "Dark+"
+        },
         "extensions": [
             "ms-toolsai.jupyter",
             "ms-python.python"
