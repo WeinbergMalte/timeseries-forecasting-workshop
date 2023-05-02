@@ -1,11 +1,11 @@
 # Timeseries Forecasting Workshop
-An introduction into best practices for common time series forecasting problems
+An introduction into time series forecasting basics, challenges, best practices.
 
-# Setup
-## 1. Setup docker
+## Getting Started
+This workshop is designed to be run within GitHub Codespaces.
 
-## 2. Build Image
+* Go to the [GitHub repository](https://github.com/WeinbergMalte/timeseries-forecasting-workshop),
+* Click on "Code" and select "Codespaces"
+* Click the "+" to create a new codespace
 
-## 3. Run Image
 
-## 4. Run Jupyter Notebook

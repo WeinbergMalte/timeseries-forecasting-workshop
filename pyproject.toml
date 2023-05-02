@@ -2,11 +2,8 @@
 authors = ["Malte Weinberg <malte.weinberg@kuehne-nagel.com>"]
 description = "Time series forecasting workshop"
 name = "timeseries"
-packages = [{include = "timeseries", from="."}]
+packages = [{include = "timeseries", from="src"}]
 version = "0.0.1"
-
-[tool.poetry.urls]
-"Datascience Team" = "https://github.com/WeinbergMalte/timeseries-forecasting-workshop"
 
 [tool.poetry.dependencies]
 lightgbm = "^3.3.3"
@@ -14,9 +11,6 @@ pandas = "^2.0"
 python = "^3.9.16,<3.11"
 scikit-learn = "^1.0"
 seaborn = "^0.12.2"
-
-[tool.poetry.scripts]
-airpricingetl = "timeseries.cli:app"
 
 [tool.poetry.group.dev.dependencies]
 pylint = "^2.10.2"
@@ -56,3 +50,7 @@ sections = ['FUTURE', 'PYTEST', 'STDLIB', 'THIRDPARTY', 'FIRSTPARTY', 'LOCALFOLD
 
 [tool.mypy]
 plugins = ["numpy.typing.mypy_plugin"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
