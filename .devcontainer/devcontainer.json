@@ -1,16 +1,20 @@
 {
-    "name": "Python 3",
-    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "image": "mcr.microsoft.com/devcontainers/python:0-3.10-bullseye",
-    "features": {
-      "ghcr.io/devcontainers-contrib/features/coverage-py:2": {}
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "hostRequirements": {
+        "cpus": 2
     },
+    "waitFor": "onCreateCommand",
+    "updateContentCommand": "python3 -m pip install poetry",
     "postCreateCommand": "bash ./.devcontainer/post-install.sh",
-    //"postCreateCommand": "pip3 install poetry & poetry install ",
-    // Add the IDs of extensions you want installed when the container is created.
-    "extensions": [
-        "ms-toolsai.jupyter",
-        "ms-python.python",
-        "ms-python.vscode-pylance"
-    ]
+    "customizations": {
+        "codespaces": {
+            "openFiles": []
+        },
+        "vscode": {
+        "extensions": [
+            "ms-toolsai.jupyter",
+            "ms-python.python"
+            ]
+        }
+    }
 }
