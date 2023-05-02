@@ -40,6 +40,7 @@ alias gcm="git commit"
 
 #### Poetry #######################################
 WORKSPACE_DIR=$(pwd)
+pip3 install poetry
 poetry config cache-dir ${WORKSPACE_DIR}/.cache
 poetry config virtualenvs.in-project true
 poetry install

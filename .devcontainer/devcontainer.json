@@ -1,16 +1,16 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.231.6/containers/python-3
 {
     "name": "Python 3",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "image": "mcr.microsoft.com/devcontainers/python:0-3.10-bullseye",
+    "features": {
+      "ghcr.io/devcontainers-contrib/features/coverage-py:2": {}
     },
+    "postCreateCommand": "bash ./.devcontainer/post-install.sh",
+    //"postCreateCommand": "pip3 install poetry & poetry install ",
     // Add the IDs of extensions you want installed when the container is created.
     "extensions": [
         "ms-toolsai.jupyter",
         "ms-python.python",
         "ms-python.vscode-pylance"
-    ],
-    "postCreateCommand": "bash ./.devcontainer/post-install.sh"
+    ]
 }
