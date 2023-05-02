@@ -5,7 +5,7 @@
     },
     "waitFor": "onCreateCommand",
     "updateContentCommand": "python3 -m pip install poetry && poetry install && poetry run python3 -m jupyter lab build",
-    // "postCreateCommand": "bash ./.devcontainer/post-install.sh",
+    "postCreateCommand": "",
     "customizations": {
         "codespaces": {
             "openFiles": []
