@@ -2,4 +2,4 @@
 FROM mcr.microsoft.com/vscode/devcontainers/python:0-3.10-bullseye
 
 # Poetry
-RUN "umask 0002 && pip3 install poetry==1.2.0"
+RUN "pip3 install poetry==1.2.0"
