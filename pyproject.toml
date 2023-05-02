@@ -15,6 +15,8 @@ tqdm = "^4.65.0"
 torch = "^2.0.0"
 sktime = "^0.18.0"
 darts = "^0.24.0"
+jupyter = "^1.0.0"
+jupyterlab = "^3.6.3"
 
 [tool.poetry.group.dev.dependencies]
 pylint = "^2.10.2"
