@@ -7,10 +7,14 @@ version = "0.0.1"
 
 [tool.poetry.dependencies]
 lightgbm = "^3.3.3"
-pandas = "^2.0"
+pandas = "^1.5.3"
 python = "^3.9.16,<3.11"
 scikit-learn = "^1.0"
 seaborn = "^0.12.2"
+tqdm = "^4.65.0"
+torch = "^2.0.0"
+sktime = "^0.18.0"
+darts = "^0.24.0"
 
 [tool.poetry.group.dev.dependencies]
 pylint = "^2.10.2"
