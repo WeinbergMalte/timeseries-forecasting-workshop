@@ -6,19 +6,18 @@ packages = [{include = "timeseries", from="src"}]
 version = "0.0.1"
 
 [tool.poetry.dependencies]
+python = ">=3.9,<3.12"
 lightgbm = "^3.3.3"
 pandas = "^1.5.3"
-python = "^3.9.16,<3.11"
 scikit-learn = "^1.0"
 seaborn = "^0.12.2"
 tqdm = "^4.65.0"
-torch = "^2.0.0"
 sktime = "^0.18.0"
-darts = "^0.24.0"
-jupyter = "^1.0.0"
-jupyterlab = "^3.6.3"
 
 [tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+jupyterlab = "^3.6.3"
+ipykernel = "^6.22.0"
 pylint = "^2.10.2"
 pytest = "^7.0.1"
 black = ">=22.12.0"
@@ -58,5 +57,5 @@ sections = ['FUTURE', 'PYTEST', 'STDLIB', 'THIRDPARTY', 'FIRSTPARTY', 'LOCALFOLD
 plugins = ["numpy.typing.mypy_plugin"]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.2.0"]
 build-backend = "poetry.core.masonry.api"
