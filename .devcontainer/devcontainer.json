@@ -12,6 +12,7 @@
         },
         "vscode": {
             "settings": {
+                "terminal.integrated.rendererType": "canvas",
                 "workbench.colorTheme": "Dark+",
                 "python.defaultInterpreterPath": "/usr/local/bin/python",
                 "python.venvPath": "~/.cache/pypoetry/virtualenvs"
