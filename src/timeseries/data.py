@@ -39,7 +39,7 @@ def load_air_quality(file_path: Path) -> pd.DataFrame:
         "PT08.S4(NO2)": "no2_sensor",
         "PT08.S5(O3)": "o3_sensor",
         "T": "t",
-        "RH": "rh",
+        "RH": "humidity",
         "AH": "ah",
     }
     df = df.rename(columns=column_mapping)
