@@ -26,7 +26,7 @@
                 "ms-python.isort",
                 "redhat.vscode-yaml",
                 "tamasfe.even-better-toml"
-        ]
+            ]
         }
     }
 }
