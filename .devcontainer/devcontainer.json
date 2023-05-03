@@ -18,15 +18,18 @@
                 "python.venvPath": "~/.cache/pypoetry/virtualenvs"
             },
             "extensions": [
-                "ms-toolsai.jupyter",
-                "ms-python.python",
-                "ms-python.black-formatter",
-                "ms-python.vscode-pylance",
-                "wayou.vscode-todo-highlight",
-                "ms-python.isort",
-                "redhat.vscode-yaml",
-                "tamasfe.even-better-toml"
-            ]
+				"ms-toolsai.jupyter",
+				"ms-python.python",
+				"ms-python.black-formatter",
+				"ms-python.vscode-pylance",
+				"wayou.vscode-todo-highlight",
+				"ms-python.isort",
+				"redhat.vscode-yaml",
+				"tamasfe.even-better-toml",
+				"bierner.markdown-mermaid",
+				"ms-toolsai.jupyter-keymap",
+				"ms-toolsai.jupyter-renderers"
+			]
         }
     }
 }
