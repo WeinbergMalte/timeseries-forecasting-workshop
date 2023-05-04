@@ -14,8 +14,8 @@
             "settings": {
                 "terminal.integrated.rendererType": "canvas",
                 "workbench.colorTheme": "Dark+",
-                "python.defaultInterpreterPath": "/usr/local/bin/python",
-                "python.venvPath": "~/.cache/pypoetry/virtualenvs"
+                "python.defaultInterpreterPath": "/workspaces/timeseries-forecasting-workshop/.venv",
+                "python.venvPath": "/workspaces/timeseries-forecasting-workshop/.venv"
             },
             "extensions": [
 				"ms-toolsai.jupyter",
@@ -28,7 +28,8 @@
 				"tamasfe.even-better-toml",
 				"bierner.markdown-mermaid",
 				"ms-toolsai.jupyter-keymap",
-				"ms-toolsai.jupyter-renderers"
+				"ms-toolsai.jupyter-renderers",
+				"mechatroner.rainbow-csv"
 			]
         }
     }
