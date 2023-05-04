@@ -5,6 +5,17 @@ from pathlib import Path
 import pandas as pd
 
 
+def load_retail(file_path: Path) -> pd.DataFrame:
+    """
+    Load univariate online retail data set.
+    Source: "https://raw.githubusercontent.com/facebook/prophet/master/examples/example_retail_sales.csv"
+
+    :param file_path: Path to the data file
+    :return: Processed data frame
+    """
+    return pd.read_csv(file_path, parse_dates=["month"]).set_index("month").sort_index()
+
+
 def load_air_quality(file_path: Path) -> pd.DataFrame:
     """
     Load and process air quality data set.
