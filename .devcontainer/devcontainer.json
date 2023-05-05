@@ -11,6 +11,7 @@
             "settings": {
                 "terminal.integrated.rendererType": "canvas",
                 "workbench.colorTheme": "Dark+",
+                "editor.defaultFormatter": "ms-python.black-formatter",
                 "python.defaultInterpreterPath": "/workspaces/timeseries-forecasting-workshop/.venv",
                 "python.venvPath": "/workspaces/timeseries-forecasting-workshop/.venv"
             },
