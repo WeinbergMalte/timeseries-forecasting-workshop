@@ -24,7 +24,9 @@ def load_sunspots(file_path: Path) -> pd.DataFrame:
     :param file_path: Path to the data file
     :return: Processed data frame
     """
-    return pd.read_csv(file_path, parse_dates=["date"]).set_index("date")
+    df = pd.read_csv(file_path, parse_dates=["date"]).set_index("date")
+    df["date"] = df["date"].dt.to_period("M")
+    return df
 
 
 def load_retail(file_path: Path) -> pd.DataFrame:
