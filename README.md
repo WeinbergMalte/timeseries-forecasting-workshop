@@ -16,10 +16,11 @@ This workshop is designed to be run within [GitHub Codespaces](https://github.co
 ## Local Setup
 Instead of working in Codespaces, you could just as well clone the repository and set up a local development environment. This is how you do it:
 
-1. Clone the repository
-2. Have Python installed and install [Poetry](https://python-poetry.org/docs/#installation)
-3. Run `poetry install` in the root folder of the repository
-4. Run `poetry run pytest` to check if everything is set up correctly
+1. Clone the repository.
+2. Have Python installed and install [Poetry](https://python-poetry.org/docs/#installation).
+3. Run `poetry install` in the root folder of the repository.
+4. Run `poetry run pytest` to check if everything is set up correctly.
+5. Run `poetry run jupyter lab` to start a local Jupyter server and run the notebooks.
 
 ## Resources &#x1F913;
 
