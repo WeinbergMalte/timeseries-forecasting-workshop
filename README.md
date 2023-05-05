@@ -25,5 +25,5 @@ Instead of working in Codespaces, you could just as well clone the repository an
 
 - [Udemy](https://www.udemy.com/): Parts of this workshop is built upon the excellent Udemy course on [Feature Engineering for Time Series Forecasting](https://www.udemy.com/course/feature-engineering-for-time-series-forecasting/). It's an older course but it checks out. Instead of an academic approach it has lots of great hands-on examples and explanations how stuff is actuall done in production.
 - [GitHub Codespaces](https://github.com/features/codespaces): Pre-configured dev environments in the cloud
-- [Poetry](https://python-poetry.org): The de-facto standard dependency management and packaging tool for Python
-- 
+- [Poetry](https://python-poetry.org): The hands down best dependency management and packaging tool for Python. Yes, dependency management in Python is super messy, but with Poetry it's a bit less messy.
+- [Jupyter](https://jupyter.org) Interactive development environment great for data science analysis and early-stage development.
