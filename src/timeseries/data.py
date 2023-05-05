@@ -5,6 +5,28 @@ from pathlib import Path
 import pandas as pd
 
 
+def load_airline(file_path: Path) -> pd.DataFrame:
+    """
+    Load airline passengers time series data set.
+    Source: Unknown
+
+    :param file_path: Path to the data file
+    :return: Processed data frame
+    """
+    return pd.read_csv(file_path, parse_dates=["month"]).set_index("month")
+
+
+def load_sunspots(file_path: Path) -> pd.DataFrame:
+    """
+    Load sunsplots time series data set.
+    Source: https://www.ngdc.noaa.gov/stp/solar/ssndata.html
+
+    :param file_path: Path to the data file
+    :return: Processed data frame
+    """
+    return pd.read_csv(file_path, parse_dates=["date"]).set_index("date")
+
+
 def load_retail(file_path: Path) -> pd.DataFrame:
     """
     Load univariate online retail data set.
