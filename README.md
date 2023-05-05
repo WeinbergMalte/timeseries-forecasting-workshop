@@ -14,7 +14,9 @@ This workshop is designed to be run within [GitHub Codespaces](https://github.co
 8. Select `.venv` as the Python interpreter in the top right corner.
 
 ## Local Setup
-Instead of working in Codespaces, you could just as well clone the repository and set up a local development environment. This is how you do it:
+Instead of working in Codespaces, you could just as well clone the repository and set up a local development environment. There are no guarantees for everything to work, though.
+
+This is how you do it:
 
 1. Clone the repository.
 2. Have Python installed and install [Poetry](https://python-poetry.org/docs/#installation).
