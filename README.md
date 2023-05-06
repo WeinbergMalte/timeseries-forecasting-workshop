@@ -5,13 +5,14 @@ An introduction into time series forecasting basics, challenges, best practices.
 This workshop is designed to be run within [GitHub Codespaces](https://github.com/features/codespaces).
 
 1. Go to the [repository](https://github.com/WeinbergMalte/timeseries-forecasting-workshop)
-2. Click on `"Code"` and select `"Codespaces"`
-3. Click `"Create codespace on main"`
-4. Wait. A new docker image with your own cloud-development environment should is spun up (should be visible in a new browser window). This may take a while.
-5. Wait some more. Even after the VS-Code IDE is loaded, it takes some time to install plugins and set everything up. This should be shown in the terminal, but sometimes you'll just have to wait until the clock symbol in the extensions disappears.
-6. After the IDE is properly loaded in the browser, check if everything is set up correctly by running `poetry run pytest` in the terminal.
-7. Go to the `/notebooks` folder and open the `01-Introduction.ipynb` notebook.
-8. Select `.venv` as the Python interpreter in the top right corner.
+2. Switch branches to `feature/workshop`
+3. Click on `"Code"` and select `"Codespaces"`
+4. Click `"Create codespace on feature/workshop"`
+5. Wait. A new docker image with your own cloud-development environment should is spun up (should be visible in a new browser window). This may take a while.
+6. Wait some more. Even after the VS-Code IDE is loaded, it takes some time to install plugins and set everything up. This should be shown in the terminal, but sometimes you'll just have to wait until the clock symbol in the extensions disappears.
+7. After the IDE is properly loaded in the browser, check if everything is set up correctly by running `poetry run pytest` in the terminal.
+8. Go to the `/notebooks` folder and open the `01-Introduction.ipynb` notebook.
+9. Select `.venv` as the Python interpreter in the top right corner.
 
 ## Local Setup
 Instead of working in Codespaces, you could just as well clone the repository and set up a local development environment. There are no guarantees for everything to work, though.
