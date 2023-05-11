@@ -1,0 +1,65 @@
+[tool.poetry]
+authors = ["Malte Weinberg <malte.weinberg@kuehne-nagel.com>"]
+description = "Time series forecasting workshop"
+name = "timeseries"
+packages = [{include = "timeseries", from="src"}]
+version = "0.0.1"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+lightgbm = "^3.3.3"
+pandas = "^1.5.3"
+scikit-learn = "^1.0"
+seaborn = "^0.12.2"
+sktime = "^0.18.0"
+prophet = "^1.0.1"
+pyarrow = "^12.0.0"
+fastparquet = "^2023.4.0"
+feature-engine = "^1.6.0"
+skforecast = "^0.7.0"
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+jupyterlab = "^3.6.3"
+ipykernel = "^6.22.0"
+pylint = "^2.10.2"
+pytest = "^7.0.1"
+black = ">=22.12.0"
+mypy = "^0.991"
+isort = "^5.12.0"
+
+[tool.pytest]
+addopts = "-ra --black"
+junit_logging = "all"
+log_file_level = "debug"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+  "ignore:Call to deprecated create function FieldDescriptor",
+  "ignore:Call to deprecated create function Descriptor",
+  "ignore:Call to deprecated create function EnumDescriptor",
+  "ignore:Call to deprecated create function EnumValueDescriptor",
+  "ignore:Call to deprecated create function FileDescriptor",
+  "ignore:Call to deprecated create function OneofDescriptor",
+  "ignore:.*:DeprecationWarning",
+  "ignore:.*:FutureWarning",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+
+[tool.isort]
+include_trailing_comma = 'True'
+known_pytest = ['pytest']
+line_length = 88
+multi_line_output = 3
+profile = "black"
+sections = ['FUTURE', 'PYTEST', 'STDLIB', 'THIRDPARTY', 'FIRSTPARTY', 'LOCALFOLDER']
+
+[tool.mypy]
+plugins = ["numpy.typing.mypy_plugin"]
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"

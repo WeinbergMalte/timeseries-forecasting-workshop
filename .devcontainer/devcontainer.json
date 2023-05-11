@@ -1,0 +1,34 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "waitFor": "onCreateCommand",
+    "updateContentCommand": "python3 -m pip install poetry && poetry config virtualenvs.in-project true && poetry install && poetry run python3 -m jupyter lab build",
+    "postCreateCommand": "",
+    "customizations": {
+        "codespaces": {
+            "openFiles": []
+        },
+        "vscode": {
+            "settings": {
+                "terminal.integrated.rendererType": "canvas",
+                "workbench.colorTheme": "Dark+",
+                "editor.defaultFormatter": "ms-python.black-formatter",
+                "python.defaultInterpreterPath": "/workspaces/timeseries-forecasting-workshop/.venv",
+                "python.venvPath": "/workspaces/timeseries-forecasting-workshop/.venv"
+            },
+            "extensions": [
+				"ms-toolsai.jupyter",
+				"ms-python.python",
+				"ms-python.black-formatter",
+				"ms-python.vscode-pylance",
+				"wayou.vscode-todo-highlight",
+				"ms-python.isort",
+				"redhat.vscode-yaml",
+				"tamasfe.even-better-toml",
+				"bierner.markdown-mermaid",
+				"ms-toolsai.jupyter-keymap",
+				"ms-toolsai.jupyter-renderers",
+				"mechatroner.rainbow-csv"
+			]
+        }
+    }
+}
