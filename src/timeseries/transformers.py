@@ -1,5 +1,6 @@
 """Module containing custom scikit-learn transformers."""
-from typing import Callable, Union
+
+from typing import Callable, Optional, Union
 
 import numpy as np
 import pandas as pd
@@ -56,7 +57,7 @@ class SignRetainingFuncTransformer(BaseEstimator, TransformerMixin):
 
     def __init__(
         self,
-        columns: Union[str, list[str]] = None,
+        columns: Optional[Union[str, list[str]]] = None,
         func: Callable = np.log1p,
         inverse_func: Callable = np.expm1,
     ):

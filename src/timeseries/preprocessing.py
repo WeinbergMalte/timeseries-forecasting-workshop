@@ -1,5 +1,7 @@
 """Preprocesing functions"""
 
+from typing import Optional
+
 import numpy as np
 import pandas as pd
 
@@ -46,7 +48,7 @@ def lag_features(df: pd.DataFrame, columns: list[str], lags: list[int]) -> pd.Da
 
 
 def window_features(
-    df: pd.DataFrame, columns: list[str], funcs: list[str] = None
+    df: pd.DataFrame, columns: list[str], funcs: Optional[list[str]] = None
 ) -> pd.DataFrame:
     if funcs is None:
         funcs = ["mean", "min", "max", "std"]

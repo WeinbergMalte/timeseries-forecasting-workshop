@@ -94,4 +94,7 @@ def load_air_quality(file_path: Path) -> pd.DataFrame:
     df = df.set_index(date_col).sort_index()
 
     # Reduce data span (poor data quality outside these dates)
-    return df.loc["2004-04-04":"2005-04-04"]
+    df = df[df.index >= "2004-04-04"]
+    df = df[df.index <= "2005-04-04"]
+
+    return df
