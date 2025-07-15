@@ -11,8 +11,8 @@ This workshop is designed to be run within [GitHub Codespaces](https://github.co
 5. Wait. A new docker image with your own cloud-development environment is spun up (should be visible in a new browser window). This may take a while.
 6. Wait some more. Even after the VS-Code IDE is loaded, it takes some time to install plugins and set everything up. This should be shown in the terminal, but sometimes you'll just have to wait until the clock symbol in the extensions disappears.
 7. After the IDE is properly loaded in the browser, check if everything is set up correctly by running `uv run pytest` in the terminal.
-8. Go to the `/notebooks` folder and open the `01-Introduction.ipynb` notebook.
-9. Click `Run All` and select `.venv` as the Python interpreter when prompted.
+8. Open the `/notebooks` folder in the sidebar and open the `01-Introduction.ipynb` notebook.
+9. Click `Run All` and select `timeseries` as the Python interpreter when prompted.
 
 ## Local Setup
 Instead of working in Codespaces, you could just as well clone the repository and set up a local development environment. There are no guarantees for everything to work, though.
@@ -20,7 +20,7 @@ Instead of working in Codespaces, you could just as well clone the repository an
 This is how you do it:
 
 1. Clone the repository.
-2. Have Python installed and install [uv](https://docs.astral.sh/uv/getting-started/installation/).
+2. Install [uv](https://docs.astral.sh/uv/getting-started/installation/).
 3. Run `uv sync` in the root folder of the repository.
 4. Run `uv run pytest` to check if everything is set up correctly.
 5. Run `uv run jupyter lab` to start a local Jupyter server and run the notebooks.

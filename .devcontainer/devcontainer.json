@@ -1,7 +1,7 @@
 {
     "image": "ghcr.io/astral-sh/uv:python3.11-bookworm-slim",
     "waitFor": "onCreateCommand",
-    "updateContentCommand": "uv sync && uv run python -m ipykernel install --user --name timeseries",
+    "updateContentCommand": "apt-get update && apt-get install -y make && uv sync && uv run python -m ipykernel install --user --name timeseries",
     "postCreateCommand": "",
     "customizations": {
         "codespaces": {
@@ -21,13 +21,10 @@
 				"ms-python.python",
 				"charliermarsh.ruff",
 				"ms-python.vscode-pylance",
-				"wayou.vscode-todo-highlight",
-				"redhat.vscode-yaml",
 				"tamasfe.even-better-toml",
 				"bierner.markdown-mermaid",
 				"ms-toolsai.jupyter-keymap",
-				"ms-toolsai.jupyter-renderers",
-				"mechatroner.rainbow-csv"
+				"ms-toolsai.jupyter-renderers"
 			]
         }
     }
