@@ -1,7 +1,7 @@
 {
     "image": "ghcr.io/astral-sh/uv:python3.11-bookworm-slim",
     "waitFor": "onCreateCommand",
-    "updateContentCommand": "uv sync",
+    "updateContentCommand": "uv sync && uv run python -m ipykernel install --user --name timeseries",
     "postCreateCommand": "",
     "customizations": {
         "codespaces": {
@@ -13,7 +13,8 @@
                 "workbench.colorTheme": "Dark+",
                 "editor.defaultFormatter": "charliermarsh.ruff",
                 "python.defaultInterpreterPath": "/workspaces/timeseries-forecasting-workshop/.venv/bin/python",
-                "python.venvPath": "/workspaces/timeseries-forecasting-workshop/.venv"
+                "python.venvPath": "/workspaces/timeseries-forecasting-workshop",
+                "jupyter.defaultKernel": "timeseries"
             },
             "extensions": [
 				"ms-toolsai.jupyter",
