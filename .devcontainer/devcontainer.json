@@ -1,7 +1,7 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "image": "ghcr.io/astral-sh/uv:python3.11-bookworm-slim",
     "waitFor": "onCreateCommand",
-    "updateContentCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && source $HOME/.cargo/env && uv sync && uv run python -m jupyter lab build",
+    "updateContentCommand": "uv sync",
     "postCreateCommand": "",
     "customizations": {
         "codespaces": {
