@@ -8,8 +8,8 @@ help:  ## Print all targets
 	@echo "\033[1mAvailable targets\033[0m"
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-30s\033[0m %s\n", $$1, $$2}' | egrep -v '^[^#]+/' | sort; true
 
-black: .ALWAYS ## Runs black formatting
-	poetry run black .
+format: .ALWAYS ## Runs ruff formatting
+	uv run ruff format .
 
 cleanup: .ALWAYS ## Removes .ipynb_checkpoint, .pytest_cache, and __pycache__ folders and .coverage files
 	find . -type d -name '.ipynb_checkpoints' -exec rm -r {} +
@@ -19,13 +19,16 @@ cleanup: .ALWAYS ## Removes .ipynb_checkpoint, .pytest_cache, and __pycache__ fo
 	find . -type f -name '.coverage' -exec rm -r {} +
 	find . -type f -name '.coverage.*' -exec rm -r {} +
 
-format: .ALWAYS ## Runs isort and black formatting
-	poetry run isort .
-	poetry run black .
+lint: .ALWAYS ## Runs ruff linting
+	uv run ruff check .
+
+check: .ALWAYS ## Runs ruff linting and formatting check
+	uv run ruff check .
+	uv run ruff format --check .
 
 mypy: .ALWAYS ## Runs mypy
-	poetry run mypy . --ignore-missing-imports
+	uv run mypy . --ignore-missing-imports
 
 pytest: .ALWAYS ## Runs pytest
-	poetry run pytest
+	uv run pytest
 

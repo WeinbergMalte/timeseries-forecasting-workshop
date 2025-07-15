@@ -51,7 +51,7 @@ class MultiCategoryEstimator(TransformerMixin, BaseEstimator):
                 print(f"Fitting for category: {category}")
             idx = (X[self.category_col] == category).values
             if "eval_set" in kwargs:
-                eval_category = list()
+                eval_category = []
                 for e in kwargs["eval_set"]:
                     X_e, y_e = e
                     idx_e = (X_e[self.category_col] == category).values

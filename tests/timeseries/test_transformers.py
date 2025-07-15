@@ -1,9 +1,6 @@
-import pytest
-
-from typing import List
-
 import numpy as np
 import pandas as pd
+import pytest
 from numpy.testing import assert_array_equal
 from pandas.testing import assert_frame_equal
 
@@ -19,12 +16,12 @@ STR_COLS = ["StrCol1", "StrCol2"]
 np.random.seed(0)
 
 
-def _get_floats(low: int, high: int, size: int) -> List[float]:
+def _get_floats(low: int, high: int, size: int) -> list[float]:
     """Helper function generating list of random floats"""
     return list(np.random.uniform(low=low, high=high, size=size))
 
 
-def _get_ints(low: int, high: int, size: int) -> List[float]:
+def _get_ints(low: int, high: int, size: int) -> list[float]:
     """Helper function generating list of random data"""
     return list(np.random.randint(low=low, high=high, size=size))
 

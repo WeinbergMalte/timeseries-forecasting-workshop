@@ -1,7 +1,7 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "image": "ghcr.io/astral-sh/uv:python3.11-bookworm-slim",
     "waitFor": "onCreateCommand",
-    "updateContentCommand": "python3 -m pip install poetry && poetry config virtualenvs.in-project true && poetry install && poetry run python3 -m jupyter lab build",
+    "updateContentCommand": "uv sync && uv run python -m ipykernel install --user --name timeseries",
     "postCreateCommand": "",
     "customizations": {
         "codespaces": {
@@ -11,17 +11,17 @@
             "settings": {
                 "terminal.integrated.rendererType": "canvas",
                 "workbench.colorTheme": "Dark+",
-                "editor.defaultFormatter": "ms-python.black-formatter",
-                "python.defaultInterpreterPath": "/workspaces/timeseries-forecasting-workshop/.venv",
-                "python.venvPath": "/workspaces/timeseries-forecasting-workshop/.venv"
+                "editor.defaultFormatter": "charliermarsh.ruff",
+                "python.defaultInterpreterPath": "/workspaces/timeseries-forecasting-workshop/.venv/bin/python",
+                "python.venvPath": "/workspaces/timeseries-forecasting-workshop",
+                "jupyter.defaultKernel": "timeseries"
             },
             "extensions": [
 				"ms-toolsai.jupyter",
 				"ms-python.python",
-				"ms-python.black-formatter",
+				"charliermarsh.ruff",
 				"ms-python.vscode-pylance",
 				"wayou.vscode-todo-highlight",
-				"ms-python.isort",
 				"redhat.vscode-yaml",
 				"tamasfe.even-better-toml",
 				"bierner.markdown-mermaid",
