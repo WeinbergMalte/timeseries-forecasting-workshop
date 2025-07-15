@@ -13,7 +13,9 @@ def load_airline(file_path: Path) -> pd.DataFrame:
     :param file_path: Path to the data file
     :return: Processed data frame
     """
-    return pd.read_csv(file_path, parse_dates=["month"]).set_index("month")
+    df = pd.read_csv(file_path, parse_dates=["month"]).set_index("month")
+    df.index.freq = pd.infer_freq(df.index)
+    return df
 
 
 def load_sunspots(file_path: Path) -> pd.DataFrame:
@@ -47,22 +49,29 @@ def load_air_quality(file_path: Path) -> pd.DataFrame:
     Source: https://archive.ics.uci.edu/ml/datasets/Air+Quality
 
     The dataset was collected between January 2004 and March 2005.
-    It consists of hourly measurements of the different air pollutants, NO2, NOX, CO, C6H6, O3 and NMHC. The measurements are accompanied by local temperature and humidity values, also recorded hourly.
-    In the data collection experiments, scientists were testing new pollutant sensors. The values from the new sensors are stored in the variables called _sensors.
-    For comparison, data for the pollutants was also gathered from fixed stations, that regularly measure the concentration of these gases. Those values are stored in the variables called _true.
+    It consists of hourly measurements of the different air pollutants, NO2, NOX, CO, C6H6, O3 and NMHC.
+    The measurements are accompanied by local temperature and humidity values, also recorded hourly.
+    In the data collection experiments, scientists were testing new pollutant sensors.
+    The values from the new sensors are stored in the variables called _sensors.
+    For comparison, data for the pollutants was also gathered from fixed stations, that regularly measure the concentration of these gases.
+    Those values are stored in the variables called _true.
 
     :param file_path: Path to the data file
     :return: Processed data frame
     """
+    DATE_COL = "date_time"
 
     # Load and parse original csv file
-    df = pd.read_csv(file_path, sep=";", parse_dates=[["Date", "Time"]]).iloc[:, :-2]
+    df = pd.read_csv(file_path, sep=";").iloc[:, :-2]
+    df[DATE_COL] = pd.to_datetime(
+        df["Date"] + " " + df["Time"], format="%d/%m/%Y %H.%M.%S"
+    )
+    df = df.drop(columns=["Date", "Time"])
+    df = df.set_index(DATE_COL).sort_index()
     df = df.dropna()
 
     # Rename columns
-    date_col = "date_time"
     column_mapping = {
-        "Date_Time": date_col,
         "CO(GT)": "co_true",
         "PT08.S1(CO)": "co_sensor",
         "NMHC(GT)": "nmhc_true",
@@ -86,12 +95,6 @@ def load_air_quality(file_path: Path) -> pd.DataFrame:
             continue
         df[var] = df[var].str.replace(",", ".")
         df[var] = pd.to_numeric(df[var])
-
-    # Process datetimes
-    df[df[date_col].apply(lambda x: len(x)) > 19]
-    df[date_col] = df[date_col].str.replace(".", ":", regex=True)
-    df[date_col] = pd.to_datetime(df[date_col])
-    df = df.set_index(date_col).sort_index()
 
     # Reduce data span (poor data quality outside these dates)
     df = df[df.index >= "2004-04-04"]

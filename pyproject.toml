@@ -3,9 +3,9 @@ name = "timeseries"
 version = "0.0.1"
 description = "Time series forecasting workshop"
 authors = [
-    {name = "Malte Weinberg", email = "malte.weinberg@kuehne-nagel.com"}
+    {name = "Malte Weinberg", email = "maltexweinberg@gmail.com"}
 ]
-requires-python = ">=3.9,<3.12"
+requires-python = ">=3.11,<3.13"
 dependencies = [
     "lightgbm>=3.3.3",
     "pandas>=1.5.3",
@@ -14,13 +14,9 @@ dependencies = [
     "sktime>=0.18.0",
     "pyarrow>=12.0.0",
     "fastparquet>=2023.4.0",
-    "feature-engine>=1.6.0",
+    "feature-engine>=1.8.0",
     "skforecast>=0.7.0",
     "prophet>=1.1.4",
-]
-
-[project.optional-dependencies]
-dev = [
     "jupyter>=1.0.0",
     "jupyterlab>=3.6.3",
     "ipykernel>=6.22.0",
@@ -28,17 +24,7 @@ dev = [
     "pytest>=7.0.1",
     "ruff>=0.1.0",
     "mypy>=0.991",
-]
-
-[tool.uv]
-dev-dependencies = [
-    "jupyter>=1.0.0",
-    "jupyterlab>=3.6.3",
-    "ipykernel>=6.22.0",
-    "pylint>=2.10.2",
-    "pytest>=7.0.1",
-    "ruff>=0.1.0",
-    "mypy>=0.991",
+    "xgboost>=3.0.2",
 ]
 
 [tool.pytest]

@@ -9,7 +9,7 @@ import pandas as pd
 from sklearn.metrics import (
     mean_absolute_error,
     mean_absolute_percentage_error,
-    mean_squared_error,
+    root_mean_squared_error,
 )
 
 
@@ -20,7 +20,7 @@ def print_metrics(y_true: pd.Series, y_pred: pd.Series) -> None:
     :param y_true: True values
     :param y_pred: Predicted values
     """
-    rmse = mean_squared_error(y_true, y_pred, squared=False)
+    rmse = root_mean_squared_error(y_true, y_pred)
     mae = mean_absolute_error(y_true, y_pred)
     mape = mean_absolute_percentage_error(y_true, y_pred)
 
